@@ -1,0 +1,75 @@
+{ config, pkgs, ... }:
+
+{
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
+  # Boot
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # Network
+  networking.hostName = "mac";
+  networking.networkmanager.enable = true;
+
+  # Time
+  time.timeZone = "Europe/Berlin";
+
+  # user
+  users.users.Mac-NixOS = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [
+      tree
+    ];
+  };
+
+  # Pkgs
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    kitty
+    rquickshare
+  ];
+
+  # Desktop: Hyprland + SDDM
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
+  programs.firefox.enable = true;
+  programs.git.enable = true;
+
+  # Sound
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
+  # Tools
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
+  services.openssh.enable = true;
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  system.copySystemConfiguration = true;
+
+  # Did You read the commmend? No? Well f+ck You.
+  system.stateVersion = "26.05";
+}

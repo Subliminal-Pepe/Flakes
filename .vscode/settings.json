@@ -1,0 +1,3 @@
+{
+    "nixDevShell.promptWhenUnset": false
+}
