@@ -50,6 +50,15 @@
     neovim
     hyprmod
     fetch
+    lazygit
+    hyprshot
+    thunar
+    pcmanfm
+    pcmanfm-qt
+    loupe
+    imagemagick
+    nh
+    kdePackages.kdeconnect-kde
   ];
 
   # Desktop: Hyprland + SDDM
@@ -64,6 +73,8 @@
     wayland.enable = true;
   };
 
+  programs.direnv.enable = false;
+  programs.direnv.silent = false;
   programs.firefox.enable = true;
   programs.git.enable = true;
   services.timesyncd.enable = true;  
