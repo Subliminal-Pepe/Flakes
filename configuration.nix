@@ -64,6 +64,9 @@
     chromium
     libreoffice
     bruno
+    joplin-desktop
+    joplin-cli
+    fzf
   ];
 
   # Desktop: Hyprland + SDDM
