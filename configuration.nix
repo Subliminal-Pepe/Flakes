@@ -67,6 +67,10 @@
     joplin-desktop
     joplin-cli
     fzf
+    ollama
+    python313Packages.pip
+    python3
+    aria2 
   ];
 
   # Desktop: Hyprland + SDDM
