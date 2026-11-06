@@ -17,14 +17,14 @@
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
 
-   services.xserver.xkb = {
+  services.xserver.xkb = {
     layout = "de";
     variant = "";
-   };
+  };
 
   console.keyMap = "de";
 
- # user
+  # user
   users.users.Mac-NixOS = {
     isNormalUser = true;
     group = "Mac-NixOS";
@@ -70,7 +70,10 @@
     ollama
     python313Packages.pip
     python3
-    aria2 
+    aria2
+    nodejs_26
+    flutter
+    androidsdk
   ];
 
   # Desktop: Hyprland + SDDM
@@ -89,7 +92,8 @@
   programs.direnv.silent = false;
   programs.firefox.enable = true;
   programs.git.enable = true;
-  services.timesyncd.enable = true;  
+  services.timesyncd.enable = true;
+
   # Sound
 services.pipewire = {
   enable = true;
@@ -99,6 +103,7 @@ services.pipewire = {
 };
 
 security.rtkit.enable = true;
+
   # Tools
   programs.mtr.enable = true;
   programs.gnupg.agent = {
@@ -106,12 +111,18 @@ security.rtkit.enable = true;
     enableSSHSupport = true;
   };
 
-  services.openssh.enable = true;
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+
+  nixpkgs.config = {
+  allowUnfree = true;
+
+  android_sdk.accept_license = true;
+};
+
+  services.openssh.enable = true;
 
   # CIFS mount of the Samba share on HOMESERVER.
   # Credentials live in /etc/samba/gast.cred (root, 0600) so the password
