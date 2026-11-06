@@ -1,4 +1,4 @@
-# Pepes Flakes
+# Pepes Flakes ~200GB
 
 This Flake install some Packages and changes the Window Manager to Hyprland with Caelestia shell
 
