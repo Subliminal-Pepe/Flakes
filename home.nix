@@ -9,7 +9,6 @@
     ./Caelestia.nix
   ];
 
-}
 
 home.activation.cloneWallpapers = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
   WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
@@ -26,7 +25,8 @@ home.activation.cloneWallpapers = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     fi
   }
 
-  clone_or_pull https://github.com/AlexandrosLiaskos/Awesome_Wallpapers "$WALLPAPER_DIR/Awesome_Wallpapers"
-  clone_or_pull https://github.com/JaKooLit/Wallpaper-Bank "$WALLPAPER_DIR/Wallpaper-Bank"
-  clone_or_pull https://github.com/NixOS/nixos-artwork/tree/master/wallpapers "$WALLPAPER_DIR/NixOS"
+  # clone_or_pull https://github.com/AlexandrosLiaskos/Awesome_Wallpapers "$WALLPAPER_DIR/Awesome_Wallpapers"
+  # clone_or_pull https://github.com/JaKooLit/Wallpaper-Bank "$WALLPAPER_DIR/Wallpaper-Bank"
+  # clone_or_pull https://github.com/NixOS/nixos-artwork/tree/master/wallpapers "$WALLPAPER_DIR/NixOS"
 '';
+}
