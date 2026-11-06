@@ -1,6 +1,10 @@
 # Pepes Flakes ~200GB
 
-This Flake install some Packages and changes the Window Manager to Hyprland with Caelestia shell
+Thiese Flakes change the Window Manager to Hyprland with Caelestia shell and install to many packages
+
+
+> [!IMPORTANT]
+> Packages marked with ^ are very large.
 
 ## Packages
 
@@ -31,5 +35,5 @@ This Flake install some Packages and changes the Window Manager to Hyprland with
 * bruno
 * aria2
 * nodejs_26
-* flutter
-* androidsdk (very large ~20GB)
+* flutter ^
+* androidsdk ^ (very large ~20GB)
